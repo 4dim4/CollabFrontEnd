@@ -9,12 +9,12 @@ app.config(function($routeProvider) {
   })
 
   .when('/home', {
-    templateUrl : 'modules/home/pages-home.html',
+    templateUrl : 'app/components/home/pages-home.html',
     /*controller  : 'BlogController'*/
   })
 
   .when('/register', {
-    templateUrl : 'modules/register/pages-user_registration.html',
+    templateUrl : 'app/components/register/pages-user_registration.html',
     /*controller  : 'AboutController'*/
   })
 

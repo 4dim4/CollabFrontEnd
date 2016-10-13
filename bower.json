@@ -1,0 +1,22 @@
+{
+  "name": "collabfrontend",
+  "homepage": "https://github.com/4dim4/CollabFrontEnd",
+  "authors": [
+    "4dim4 <hrideshh@yahoo.co.in>"
+  ],
+  "description": "Front End of Collaboration Project",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
+  }
+}
