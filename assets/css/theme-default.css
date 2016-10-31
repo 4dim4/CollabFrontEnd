@@ -3868,12 +3868,10 @@ background: #1caf9a !important;
 /* END CONTACTS */
 /* LOGIN */
 .login-container {
-
   float: left;
   width: 100%;
   min-height: 100em;
   background: url("../img/bg.png") left top repeat #1b1e24;
-
 }
 .login-container .login-box {
   width: 400px;
@@ -3901,9 +3899,6 @@ background: #1caf9a !important;
   font-size: 19px;
   font-weight: 300;
   margin-bottom: 20px;
-}
-.login-radio {
-  color:#fff;
 }
 .login-container .login-box .login-body .form-control {
   border: 0px;
@@ -3979,6 +3974,9 @@ background: #1caf9a !important;
 }
 .login-container.lightmode .login-box .login-subtitle a {
   color: #1b1e24;
+}
+.login-radio {
+  color:#fff;
 }
 /* END LOGIN */
 /* TIMELINE */
