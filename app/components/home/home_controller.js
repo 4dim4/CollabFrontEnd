@@ -12,6 +12,7 @@
         vm.user = null;
         vm.allUsers = [];
         vm.deleteUser = deleteUser;
+        console.log(vm.allUsers)
 
         initController();
 
@@ -21,9 +22,11 @@
         }
 
         function loadCurrentUser() {
-            UserService.GetByUsername($rootScope.globals.currentUser.username)
+             console.log($rootScope.globals.currentUser.id)
+            UserService.GetById($rootScope.globals.currentUser.id)
                 .then(function (user) {
                     vm.user = user;
+                    console.log(user)
                 });
         }
 
@@ -31,6 +34,7 @@
             UserService.GetAll()
                 .then(function (users) {
                     vm.allUsers = users;
+                    console.log(vm.allUsers)
                 });
         }
 
