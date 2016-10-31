@@ -11,25 +11,25 @@
         $routeProvider
             .when('/', {
                 controller: 'HomeController',
-                templateUrl: 'views/home.html',
+                templateUrl: 'app/components/home/pages-home.html',
                 controllerAs: 'vm'
             })
 
             .when('/home', {
                 controller: 'HomeController',
-                templateUrl: 'views/home.html',
+                templateUrl: 'app/components/home/pages-home.html',
                 controllerAs: 'vm'
             })
  
             .when('/login', {
                 controller: 'LoginController',
-                templateUrl: 'views/login.html',
+                templateUrl: 'app/components/login/pages-login.html',
                 controllerAs: 'vm'
             })
  
             .when('/register', {
                 controller: 'RegisterController',
-                templateUrl: 'views/register.html',
+                templateUrl: 'app/components/register/pages-user_registration.html',
                 controllerAs: 'vm'
             })
  
