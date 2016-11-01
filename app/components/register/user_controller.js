@@ -4,7 +4,7 @@ angular.module('myApp').controller('UserController', ['$scope','UserService', fu
 
 	var self = this;
 
-	self.user = {id:'',name:'',email:'',password:'',address:'',mobile:''};
+	self.user = {id:'',name:'',email:'',password:'',address:'',mobile:'',role:''};
 
 	self.users=[];
 

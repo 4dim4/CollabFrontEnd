@@ -5,6 +5,7 @@
         
             <div class="login-box animated fadeInDown">
                 <div class="login-logo"></div>
+                 <div ng-class="{ 'alert': flash, 'alert-success': flash.type === 'success', 'alert-danger': flash.type === 'error' }" ng-if="flash" ng-bind="flash.message"></div>
                 <div class="login-body">
                     <div class="login-title"><strong>Welcome</strong>, Please login</div>
 
