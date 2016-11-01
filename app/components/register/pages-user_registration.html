@@ -1,60 +1,48 @@
-<!DOCTYPE html>
-<html lang="en" class="body-full-height">
-    <head>        
-        <!-- META SECTION -->
-        <title>Joli Admin - Responsive Bootstrap Admin Template</title>            
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
-        <!-- END META SECTION -->
-        
-        <!-- CSS INCLUDE -->        
-        <link rel="stylesheet" type="text/css" id="theme" href="css/theme-default.css"/>
-        <!-- EOF CSS INCLUDE -->                                    
-    </head>
-    <body>
-        
-        <div class="login-container">
+<div class="login-container">
         
             <div class="login-box animated fadeInDown">
                 <div class="login-logo"></div>
                 <div class="login-body">
                     <div class="login-title"><strong>Welcome</strong>, Please enter your details</div>
-                    <form action="index.html" class="form-horizontal" method="post">
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="User ID"/>
-                        </div>
-                    </div>
-                      <div class="form-group">
-                        <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="Full Name"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <input type="password" class="form-control" placeholder="Password"/>
-                        </div>
-                    </div>
-                     <div class="form-group">
-                        <div class="col-md-12">
-                            <input type="email" class="form-control" placeholder="Email"/>
-                        </div>
-                    </div>
-                     <div class="form-group">
-                        <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="Mobile"/>
-                        </div>
-                    </div>
-                     <div class="form-group">
-                        <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="Address"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                     <div class="col-md-12 login-radio">
+    <form name="form" ng-submit="vm.register()" role="form" class="form-horizontal">
+        <div class="form-group" ng-class="{ 'has-error': form.id.$dirty && form.id.$error.required }">
+                <div class="col-md-12">
+            <input type="text" name="id" id="id" class="form-control" placeholder="User ID" ng-model="vm.user.id" required />
+            <span ng-show="form.id.$dirty && form.id.$error.required" class="help-block">Id is required</span>
+        </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.name.$dirty && form.name.$error.required }">
+            <div class="col-md-12">
+            <input type="text" name="name" id="Text1" class="form-control" placeholder="Full Name" ng-model="vm.user.name" required />
+            <span ng-show="form.name.$dirty && form.name.$error.required" class="help-block">name is required</span>
+        </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+            <div class="col-md-12">
+            <input type="text" name="email" id="email" class="form-control" placeholder="Password" ng-model="vm.user.email" required />
+            <span ng-show="form.email.$dirty && form.email.$error.required" class="help-block">email is required</span>
+        </div>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+             <div class="col-md-12">
+            <input type="password" name="password" id="password" class="form-control" placeholder="Email" ng-model="vm.user.password" required />
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+        </div>
+        </div>
+          <div class="form-group" ng-class="{ 'has-error': form.mobile.$dirty && form.mobile.$error.required }">
+             <div class="col-md-12">
+            <input type="mobile" name="mobile" id="mobile" class="form-control" placeholder="Mobile" ng-model="vm.user.mobile" required />
+            <span ng-show="form.mobile.$dirty && form.mobile.$error.required" class="help-block">Mobile is required</span>
+        </div>
+        </div>
+         <div class="form-group" ng-class="{ 'has-error': form.address.$dirty && form.address.$error.required }">
+             <div class="col-md-12">
+            <input type="address" name="address" id="address" class="form-control" placeholder="Address" ng-model="vm.user.address" required />
+            <span ng-show="form.address.$dirty && form.address.$error.required" class="help-block">Address is required</span>
+        </div>
+        </div>
+        <div class="form-group">
+                     <div class="col-md-offset-2 login-radio">
                         <label class="radio-inline"><input type="radio" name="optradio">Employee</label>
                         <label class="radio-inline"><input type="radio" name="optradio">Student</label>
                         <label class="radio-inline"><input type="radio" name="optradio">Alumini</label>
@@ -62,36 +50,13 @@
 
 
                     </div>
-                    <div class="form-group">
-                        
-                        <div class="col-md-12">
-                            <button class="btn btn-info btn-block">Register</button>
-                        </div>
-                    </div>
-					 
-                    </form>
-                </div>
-                <div class="login-footer">
-                    <div class="pull-left">
-                        &copy; 2014 AppName
-                    </div>
-                    <div class="pull-right">
-                        <a href="#">About</a> |
-                        <a href="#">Privacy</a> |
-                        <a href="#">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-            
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-info btn-block">Register</button>
+            <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <a href="#/login" class="btn btn-link">Cancel</a>
         </div>
-
-        <!-- need to add registration page here -->
-        
-    </body>
-</html>
-
-
-
-
-
+    </form>
+</div>
+</div>
+</div>
 
